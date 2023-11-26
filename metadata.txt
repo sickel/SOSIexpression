@@ -5,12 +5,15 @@
 [general]
 name=SOSIexpressions
 qgisMinimumVersion=3.0
-description=Expressions related to 
-version=0.1
+description=Expressions related to SOSI-data
+version=0.11
 author=Morten Sickel
 email=morten@sickel.net
 
-about=This plugin contains utility expressions to work with data from the Norwegian SOSI format. v 0.1 Experimental containing rotation_from_vector
+about=This plugin contains utility expressions to work with data from the Norwegian SOSI format. The expressions will be listed under SOSI in the expression list in e.g. the field calculator.
+     <h4>rotation_from_vector("vectorfield")</h4>From "vectorfield", a field containing a unit vector, a  rotation in degrees is calculated. This function can be used directly for calculating a rotation angle in the symbology window, in which case the symbol will be rotated the number of degrees clockwise. If the symbol initially is not pointing northwards, the angular offset can be corrected, e.g.
+     <i>rotation_from_vector("vectorfield") + 90</i>
+     for a symbol that is pointing westwards.
 
 tracker=https://github.com/sickel/SOSIexpression
 repository=https://github.com/sickel/SOSIexpression
@@ -18,7 +21,7 @@ repository=https://github.com/sickel/SOSIexpression
 
 # Recommended items:
 
-hasProcessingProvider=yes
+hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
 # changelog=
 

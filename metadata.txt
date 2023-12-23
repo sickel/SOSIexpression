@@ -6,7 +6,7 @@
 name=SOSIexpressions
 qgisMinimumVersion=3.0
 description=Expressions related to SOSI-data
-version=1.0
+version=1.1
 author=Morten Sickel
 email=morten@sickel.net
 
@@ -23,7 +23,7 @@ repository=https://github.com/sickel/SOSIexpression
 
 hasProcessingProvider=no
 # Uncomment the following line and add your changelog:
-# changelog=
+changelog=1.1 Corrected formula. Added test suite
 
 # Tags are comma separated with spaces allowed
 tags=SOSI,expressions,Norway,Norge 

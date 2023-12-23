@@ -53,9 +53,16 @@ def rotate_from_vector(vectorfield,feature,parent):
     (x,y) = vectorfield.split(" ")
     x = float(x)
     y = float(y)
+    if x == 0 and y == 0:
+        return 0
     rotate = math.atan2(y,x) / math.pi *180
     # This rotation is based on 1,0 is 0 degrees, then goes CCW, 
     # We want 0 1 to be 0 degrees and then go CW
+    rotate = 90 - rotate
+    # The rotation is turned the right way, but the degrees look
+    # bit funny from -90 to 270
+    if rotate > 180:
+        rotate = rotate - 360
     return rotate
 
 

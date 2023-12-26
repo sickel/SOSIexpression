@@ -36,7 +36,7 @@ from .functions import registerFunctions
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name
     """Initiates SOSIexpressions class .
-
+    This class has no UI, it is just adding in a new function.
     :param iface: A QGIS interface instance.
     :type iface: QgsInterface
     """

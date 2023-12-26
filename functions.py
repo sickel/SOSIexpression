@@ -72,7 +72,7 @@ def registerFunctions(isRegister=True):
     t_register = (QgsExpression.registerFunction, lambda f: f)
     u_register = (QgsExpression.unregisterFunction, lambda f: f.name())
     (funcReg, funcArg) = t_register if isRegister else u_register
-    # g = globals()
+    g = globals()
     l_func = (g[v] for v in g if hasattr(g[v], 'usesGeometry'))
     for f in l_func:
         funcReg(funcArg(f))

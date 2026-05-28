@@ -1,3 +1,6 @@
+import math
+
+
 """
 /***************************************************************************
  SOSIexpressions
@@ -32,12 +35,9 @@ from qgis.utils import qgsfunction
 
 groupName = "SOSI"
 
-import math
 
- 
-
-@qgsfunction(args='auto', group='SOSI',usesgeometry = False)
-def rotate_from_vector(vectorfield,feature,parent):
+@qgsfunction(args='auto', group='SOSI', usesgeometry=False)
+def rotate_from_vector(vectorfield, feature, parent):
 
     """
     From a field that can be None or a vector given as
@@ -49,14 +49,14 @@ def rotate_from_vector(vectorfield,feature,parent):
     """
 
     if vectorfield is None:
-        return(0)
-    (x,y) = vectorfield.split(" ")
+        return 0
+    (x, y) = vectorfield.split(" ")
     x = float(x)
     y = float(y)
     if x == 0 and y == 0:
         return 0
-    rotate = math.atan2(y,x) / math.pi *180
-    # This rotation is based on 1,0 is 0 degrees, then goes CCW, 
+    rotate = math.atan2(y, x) / math.pi * 180
+    # This rotation is based on 1,0 is 0 degrees, then goes CCW,
     # We want 0 1 to be 0 degrees and then go CW
     rotate = 90 - rotate
     # The rotation is turned the right way, but the degrees look
@@ -64,8 +64,6 @@ def rotate_from_vector(vectorfield,feature,parent):
     if rotate > 180:
         rotate = rotate - 360
     return rotate
-
-
 
 
 def registerFunctions(isRegister=True):
@@ -76,4 +74,3 @@ def registerFunctions(isRegister=True):
     l_func = (g[v] for v in g if hasattr(g[v], 'usesGeometry'))
     for f in l_func:
         funcReg(funcArg(f))
-
